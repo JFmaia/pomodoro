@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pomodoro/components/entrada_tempo.dart';
 
 class Pomodoro extends StatelessWidget {
   const Pomodoro({Key? key}) : super(key: key);
@@ -7,9 +8,21 @@ class Pomodoro extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Center(
-            child: Text("Pomodoro"),
+          Text("Pomodoro"),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              EntradaTempo(
+                title: "Trabalho",
+                valor: 25,
+              ),
+              EntradaTempo(
+                title: "Descanso",
+                valor: 5,
+              ),
+            ],
           ),
         ],
       ),
