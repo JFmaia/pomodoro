@@ -3,11 +3,15 @@ import 'package:flutter/material.dart';
 class EntradaTempo extends StatelessWidget {
   final int valor;
   final String title;
+  final void Function()? inc;
+  final void Function()? dec;
 
   const EntradaTempo({
     Key? key,
     required this.valor,
     required this.title,
+    this.inc,
+    this.dec,
   }) : super(key: key);
 
   @override
@@ -37,7 +41,7 @@ class EntradaTempo extends StatelessWidget {
                 padding: EdgeInsets.all(15),
                 primary: Colors.red,
               ),
-              onPressed: () {},
+              onPressed: this.dec,
             ),
             Text(
               "${this.valor} min",
@@ -55,7 +59,7 @@ class EntradaTempo extends StatelessWidget {
                 padding: EdgeInsets.all(15),
                 primary: Colors.red,
               ),
-              onPressed: () {},
+              onPressed: this.inc,
             ),
           ],
         ),
