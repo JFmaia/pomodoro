@@ -6,6 +6,12 @@ class PomodoroStore = _PomodoroStore with _$PomodoroStore;
 
 abstract class _PomodoroStore with Store {
   @observable
+  int minutos = 2;
+
+  @observable
+  int segundos = 0;
+
+  @observable
   int tempoTrabalho = 2;
 
   @observable
