@@ -6,6 +6,9 @@ class PomodoroStore = _PomodoroStore with _$PomodoroStore;
 
 abstract class _PomodoroStore with Store {
   @observable
+  bool iniciado = false;
+
+  @observable
   int minutos = 2;
 
   @observable
@@ -35,5 +38,20 @@ abstract class _PomodoroStore with Store {
   @action
   void decrementarTempoDescanso() {
     tempoDescanso--;
+  }
+
+  @action
+  void parar() {
+    iniciado = false;
+  }
+
+  @action
+  void iniciar() {
+    iniciado = true;
+  }
+
+  @action
+  void reiniciar() {
+    iniciado = false;
   }
 }

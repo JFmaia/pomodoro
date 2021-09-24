@@ -9,6 +9,21 @@ part of 'pomodoro.store.dart';
 // ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
 
 mixin _$PomodoroStore on _PomodoroStore, Store {
+  final _$iniciadoAtom = Atom(name: '_PomodoroStore.iniciado');
+
+  @override
+  bool get iniciado {
+    _$iniciadoAtom.reportRead();
+    return super.iniciado;
+  }
+
+  @override
+  set iniciado(bool value) {
+    _$iniciadoAtom.reportWrite(value, super.iniciado, () {
+      super.iniciado = value;
+    });
+  }
+
   final _$minutosAtom = Atom(name: '_PomodoroStore.minutos');
 
   @override
@@ -117,8 +132,42 @@ mixin _$PomodoroStore on _PomodoroStore, Store {
   }
 
   @override
+  void parar() {
+    final _$actionInfo = _$_PomodoroStoreActionController.startAction(
+        name: '_PomodoroStore.parar');
+    try {
+      return super.parar();
+    } finally {
+      _$_PomodoroStoreActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
+  void iniciar() {
+    final _$actionInfo = _$_PomodoroStoreActionController.startAction(
+        name: '_PomodoroStore.iniciar');
+    try {
+      return super.iniciar();
+    } finally {
+      _$_PomodoroStoreActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
+  void reiniciar() {
+    final _$actionInfo = _$_PomodoroStoreActionController.startAction(
+        name: '_PomodoroStore.reiniciar');
+    try {
+      return super.reiniciar();
+    } finally {
+      _$_PomodoroStoreActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
   String toString() {
     return '''
+iniciado: ${iniciado},
 minutos: ${minutos},
 segundos: ${segundos},
 tempoTrabalho: ${tempoTrabalho},
