@@ -103,6 +103,39 @@ mixin _$PomodoroStore on _PomodoroStore, Store {
       ActionController(name: '_PomodoroStore');
 
   @override
+  void parar() {
+    final _$actionInfo = _$_PomodoroStoreActionController.startAction(
+        name: '_PomodoroStore.parar');
+    try {
+      return super.parar();
+    } finally {
+      _$_PomodoroStoreActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
+  void iniciar() {
+    final _$actionInfo = _$_PomodoroStoreActionController.startAction(
+        name: '_PomodoroStore.iniciar');
+    try {
+      return super.iniciar();
+    } finally {
+      _$_PomodoroStoreActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
+  void reiniciar() {
+    final _$actionInfo = _$_PomodoroStoreActionController.startAction(
+        name: '_PomodoroStore.reiniciar');
+    try {
+      return super.reiniciar();
+    } finally {
+      _$_PomodoroStoreActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
   void incrementarTempoTrabalho() {
     final _$actionInfo = _$_PomodoroStoreActionController.startAction(
         name: '_PomodoroStore.incrementarTempoTrabalho');
@@ -141,39 +174,6 @@ mixin _$PomodoroStore on _PomodoroStore, Store {
         name: '_PomodoroStore.decrementarTempoDescanso');
     try {
       return super.decrementarTempoDescanso();
-    } finally {
-      _$_PomodoroStoreActionController.endAction(_$actionInfo);
-    }
-  }
-
-  @override
-  void parar() {
-    final _$actionInfo = _$_PomodoroStoreActionController.startAction(
-        name: '_PomodoroStore.parar');
-    try {
-      return super.parar();
-    } finally {
-      _$_PomodoroStoreActionController.endAction(_$actionInfo);
-    }
-  }
-
-  @override
-  void iniciar() {
-    final _$actionInfo = _$_PomodoroStoreActionController.startAction(
-        name: '_PomodoroStore.iniciar');
-    try {
-      return super.iniciar();
-    } finally {
-      _$_PomodoroStoreActionController.endAction(_$actionInfo);
-    }
-  }
-
-  @override
-  void reiniciar() {
-    final _$actionInfo = _$_PomodoroStoreActionController.startAction(
-        name: '_PomodoroStore.reiniciar');
-    try {
-      return super.reiniciar();
     } finally {
       _$_PomodoroStoreActionController.endAction(_$actionInfo);
     }
