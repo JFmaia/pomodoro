@@ -10,29 +10,31 @@ class Cronometro extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final store = Provider.of<PomodoroStore>(context);
-    return Container(
-      color: store.estaTrabalhando() ? Colors.green : Colors.blue,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text(
-            store.estaTrabalhando() ? "Hora de Trabalhar" : "Hora de Descansar",
-            style: TextStyle(
-              fontSize: 40,
-              color: Colors.white,
+    return Observer(
+      builder: (_) => Container(
+        color: store.estaTrabalhando() ? Colors.green : Colors.blue,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              store.estaTrabalhando()
+                  ? "Hora de Trabalhar"
+                  : "Hora de Descansar",
+              style: TextStyle(
+                fontSize: 40,
+                color: Colors.white,
+              ),
             ),
-          ),
-          SizedBox(height: 20),
-          Text(
-            "${store.minutos.toString().padLeft(2, '0')}:${store.segundos.toString().padLeft(2, '0')}",
-            style: TextStyle(
-              fontSize: 120,
-              color: Colors.white,
+            SizedBox(height: 20),
+            Text(
+              "${store.minutos.toString().padLeft(2, '0')}:${store.segundos.toString().padLeft(2, '0')}",
+              style: TextStyle(
+                fontSize: 120,
+                color: Colors.white,
+              ),
             ),
-          ),
-          SizedBox(height: 20),
-          Observer(
-            builder: (_) => Row(
+            SizedBox(height: 20),
+            Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 if (!store.iniciado)
@@ -69,8 +71,8 @@ class Cronometro extends StatelessWidget {
                 ),
               ],
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
