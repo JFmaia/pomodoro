@@ -18,7 +18,7 @@ class CronometroButton extends StatelessWidget {
       style: ElevatedButton.styleFrom(
         primary: Colors.black,
         padding: EdgeInsets.symmetric(
-          horizontal: 30,
+          horizontal: 15,
           vertical: 20,
         ),
         textStyle: TextStyle(
